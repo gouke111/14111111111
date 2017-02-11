@@ -1,0 +1,52 @@
+//
+//  PrefixHeader.pch
+//  果壳
+//
+//  Created by 李旺 on 2016/12/13.
+//  Copyright © 2016年 我赢. All rights reserved.
+//
+#import "CustomTableViewCell.h"
+
+
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#ifdef DEBUG // 开发阶段-DEBUG阶段:使用NSLog
+#define NSLog(...) NSLog(__VA_ARGS__)
+#else // 发布阶段-上线阶段:移除NSLog
+#define NSLog(...)
+#endif
+
+// 弱引用
+#define WeakSelf __weak typeof(self) weakSelf = self;
+// 屏幕尺寸
+#define ScreenHeight [UIScreen mainScreen].bounds.size.height
+#define ScreenWidth [UIScreen mainScreen].bounds.size.width
+#define ScreenFrame [UIScreen mainScreen].bounds
+#define Home @"http://apis.guokr.com/handpick/v2/article.json?retrieve_type=by_offset&limit=20&ad=1"
+
+#import "ContentViewController.h"
+#import "SignupViewController.h"
+
+#import <UMSocialCore/UMSocialCore.h>//友盟
+#import <UShareUI/UShareUI.h>
+
+#import "UIView+Category.h"
+#import "AFNetworking.h"
+#import "MJRefresh.h"
+#import "UIImageView+WebCache.h"
+#import "Masonry.h"
+#import "SVProgressHUD.h"
+#import "SDCycleScrollView.h"
+#import "RESideMenu.h"
+#import "POP.h"
+
+#import "UIButton+WebCache.h"
+#import "DengluViewController.h"
+#endif /* PrefixHeader_pch */
+
+
